@@ -8,7 +8,7 @@ DESIRED_ACCURACY = 0.98
 class myCallback(tf.keras.callbacks.Callback):
   def on_epoch_end(self, epoch, logs = {}):
     if(logs.get('acc') > DESIRED_ACCURACY):
-      print("\nReached {}% accuracy so cancelling training!".format(DESIRED_ACCURACY*100)
+      print(f"\nReached {DESIRED_ACCURACY * 100}% accuracy so cancelling training!")
       self.model.stop_training = True
 
 callbacks = myCallback()
@@ -22,4 +22,4 @@ We can make use of [tf.keras.callbacks.Callback](https://www.tensorflow.org/api_
 model.fit(training_data, training_labels, epochs=100, callbacks=[callbacks])
 ```
 
-If you would like to use `loss` instead of `accuracy`, use `logs.get('loss'`.
+If you would like to use `loss` instead of `accuracy`, use `logs.get('loss')`.
