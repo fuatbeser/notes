@@ -22,4 +22,4 @@ We can make use of [tf.keras.callbacks.Callback](https://www.tensorflow.org/api_
 model.fit(training_data, training_labels, epochs=100, callbacks=[callbacks])
 ```
 
-If you would like to use `loss` instead of `accuracy`, use `logs.get('loss'`.
+If you would like to use `loss` instead of `accuracy`, use `logs.get('loss')`.
